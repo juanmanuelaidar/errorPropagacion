@@ -38,11 +38,7 @@ func calcularErrorPropagado(v, i, fp, t float64, ev, ei, efp, et float64) float6
 	dEdfp := (v * i * t) / 1000
 	dEdt := (v * i * fp) / 1000
 
-	errorPropagado := math.Abs(dEdV)*ev +
-		math.Abs(dEdI)*ei +
-		math.Abs(dEdfp)*efp +
-		math.Abs(dEdt)*et
-
+	errorPropagado := math.Abs(dEdV)*ev + math.Abs(dEdI)*ei + math.Abs(dEdfp)*efp + math.Abs(dEdt)*et
 	return errorPropagado
 }
 
@@ -77,8 +73,8 @@ func main() {
 	fmt.Println()
 	fmt.Println("Resultados")
 	fmt.Println("-----------------------------")
-	fmt.Printf("Energía consumida: %.6f kWh\n", energia)
-	fmt.Printf("Error absoluto propagado: %.6f kWh\n", errorAbsoluto)
-	fmt.Printf("Error relativo: %.6f\n", errorRelativo)
-	fmt.Printf("Error porcentual: %.4f %%\n", errorPorcentual)
+	fmt.Printf("Energía consumida: %.2f kWh\n", energia)
+	fmt.Printf("Error absoluto propagado: %.2f kWh\n", errorAbsoluto)
+	fmt.Printf("Error relativo: %.2f\n", errorRelativo)
+	fmt.Printf("Error porcentual: %.2f %%\n", errorPorcentual)
 }
